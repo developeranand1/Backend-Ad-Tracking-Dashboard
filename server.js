@@ -8,8 +8,9 @@ const port = process.env.PORT || 5000;
 
 const metricsRouter = require("./routes/metricsRoutes");
 const errorHandler = require("./middlewares/errorHandler");
-
-app.use(cors()); 
+app.use(cors({
+  origin: '*' 
+}));
 app.use(bodyParser.json()); // Parse JSON request bodies
 app.use(bodyParser.urlencoded({ extended: true })); // Parse URL-encoded bodies
 
